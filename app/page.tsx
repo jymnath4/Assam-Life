@@ -43,7 +43,7 @@ export default function Home() {
 
         <div style={{ display: "flex", gap: "1.2rem" }}>
           <a
-            href="https://open.spotify.com/playlist/62xoq0WRnAxlOEB8modPkT?si=1Qetj6diS1OpeDSgScQmrw&utm_source=copy-link&pi=msl2vZIoSfu73"
+            href="https://open.spotify.com/playlist/3dS9ungopEEr2yZOfGKjV4?si=x5kwtmUwSXiGA9-VGOWhZQ&utm_source=copy-link&pi=Dfdb9ZvJRT2q4"
             target="_blank"
             rel="noopener noreferrer"
             style={{
