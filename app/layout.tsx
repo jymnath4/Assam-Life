@@ -1,10 +1,16 @@
 // app/layout.tsx
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "জয় আই অসম",
   description: "অসমীয়া পৰিৱেশ আৰু গীত হ'ল অসমীয়া সংস্কৃতিৰ প্ৰাণকেন্দ্ৰ। প্ৰকৃতিৰ সৌন্দৰ্য, নদী, পাহাৰ, খেতি আৰু মানুহৰ সুখ-দুখ লৈ অসমীয়া পৰিৱেশ গঢ় লৈ উঠিছে",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({

@@ -16,6 +16,7 @@ export default function Home() {
       <BackgroundSlider />
       {/* Top bar */}
       <div
+        className="app-top-bar"
         style={{
           position: "fixed",
           top: 0,
@@ -41,7 +42,7 @@ export default function Home() {
           <OnlineCounter />
         </div>
 
-        <div style={{ display: "flex", gap: "1.2rem" }}>
+        <div className="app-social-links" style={{ display: "flex", gap: "1.2rem" }}>
           <a
             href="https://open.spotify.com/playlist/3dS9ungopEEr2yZOfGKjV4?si=x5kwtmUwSXiGA9-VGOWhZQ&utm_source=copy-link&pi=Dfdb9ZvJRT2q4"
             target="_blank"
@@ -60,7 +61,7 @@ export default function Home() {
               <path d="M7.5 10c3-1 6.5-.7 9 .8M7 13c2.5-.8 5.5-.5 7.5.7M7.5 16c2-.6 4-.4 5.5.5" strokeLinecap="round" fill="none" />
             </svg>
 
-            Spotify
+            <span className="app-social-link-text">Spotify</span>
           </a>
 
           <a
@@ -81,13 +82,14 @@ export default function Home() {
               <path d="M10 9v6l5-3z" fill="#fff" stroke="none" />
             </svg>
             
-            YT Music
+            <span className="app-social-link-text">YT Music</span>
           </a>
         </div>
       </div>
 
       {/* Player fixed to bottom center */}
       <div
+        className="app-player-container"
         style={{
           position: "fixed",
           bottom: "2rem",

@@ -131,6 +131,7 @@ export default function Player() {
         <p style={{ color: "#9c8a78" }}>Loading...</p>
       ) : (
         <div
+          className="player-card"
           style={{
             position: "relative",
             display: "flex",
@@ -149,6 +150,7 @@ export default function Player() {
           }}
         >
           <img
+            className="player-cover-image"
             src={now.track.cover}
             alt={now.track.title}
             width={64}
@@ -165,6 +167,7 @@ export default function Player() {
 
           <div style={{ position: "relative", zIndex: 2, flex: 1, minWidth: 0 }}>
             <h2
+              className="player-track-title"
               style={{
                 fontSize: "1rem",
                 fontWeight: 700,
@@ -244,6 +247,7 @@ export default function Player() {
             </button>
 
             <button
+              className="player-play-btn"
               onClick={handleToggle}
               aria-label={isPlaying ? "Pause" : "Play"}
               style={{

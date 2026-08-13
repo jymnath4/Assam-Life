@@ -34,26 +34,53 @@ export default function BackgroundSlider() {
       style={{
         position: "fixed",
         inset: 0,
+        height: "100dvh",
+        width: "100vw",
         zIndex: 0,
         overflow: "hidden",
         pointerEvents: "none",
+        backgroundColor: "#100906",
       }}
     >
-      {images.map((src, index) => (
-        <div
-          key={src}
-          style={{
-            position: "absolute",
-            inset: 0,
-            backgroundImage: `url(${src})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            opacity: index === currentIndex ? 1 : 0,
-            transition: "opacity 1.5s ease-in-out",
-          }}
-        />
-      ))}
+      {images.map((src, index) => {
+        const isActive = index === currentIndex;
+        return (
+          <div
+            key={src}
+            style={{
+              position: "absolute",
+              inset: 0,
+              opacity: isActive ? 1 : 0,
+              transition: "opacity 1.5s ease-in-out",
+            }}
+          >
+            {/* Ambient blurred backdrop to fill screen with matching colors on all aspect ratios */}
+            <div
+              style={{
+                position: "absolute",
+                inset: "-20px",
+                backgroundImage: `url(${src})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                filter: "blur(32px) brightness(0.45)",
+                transform: "scale(1.15)",
+              }}
+            />
+            {/* Primary background image - cover on widescreen/laptops, contain on mobile portrait */}
+            <div
+              className="bg-slider-main-image"
+              style={{
+                position: "absolute",
+                inset: 0,
+                backgroundImage: `url(${src})`,
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center center",
+              }}
+            />
+          </div>
+        );
+      })}
     </div>
   );
 }
